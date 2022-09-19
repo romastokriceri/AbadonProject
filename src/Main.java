@@ -109,6 +109,50 @@ const int MIN_SPEED = 25; // НЕЛЬЗЯ: в Java const не используе
                 break;
             default:
                 // это выполняется в том случае, если ни одно из кейсов не выполнился
+
+                int progression = 0;
+
+// Так оформляется for
+                for (int i=0; i < 5; i++) {
+                    progression +=i;
+                }
+
+// ПЛОХО: так оформлять циклы не рекомендуется
+                for (int i=0; i < 5; i++) progression +=i;
+
+// МОЖНО: если тело цикла состоит из одного statement'а, то можно опустить
+// фигурные скобки
+                for (int i=0; i < 5; i++)
+                    progression +=i;
+
+// Пустой for
+                for (int j=0; j < 10; j++);
+
+// Так оформляется while
+                int iterator = 0;
+                while (iterator < 10) {
+                    // делаем что-то в цикле
+                    iterator++;
+                }
+
+// Так оформляется do-while
+                int loops = 10;
+                do {
+                    // что-то делаем
+                    loops--;
+                } while (loops > 0);
+
+// Также, в Java есть аналог foreach
+                int[] array = { 1, 2, 3, 4, 5 };
+                int sum = 0;
+                for(int i : array) {
+                    sum += i;
+                }
+
+// Этот же цикл можно представить обычным for`ом
+                for(int i = 0; i < 5; i++) {
+                    sum += array[i];
+                }
         }
     }
 }
